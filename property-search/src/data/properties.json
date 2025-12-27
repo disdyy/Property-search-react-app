@@ -31,5 +31,85 @@
                 "day":14,
                 "year":2022
             }
+        },
+        {
+            "id":"prop3",
+            "type":"House",
+            "bedrooms":3,
+            "price":450000,
+            "tenure":"Freehold",
+            "description":"Well presented three bedroom semi-detached family home conveniently located close to local schools, shops, and excellent transport links. The ground floor comprises a welcoming entrance hallway, a bright and spacious living room with a feature bay window, a separate dining room ideal for entertaining, and a modern fitted kitchen offering ample storage and worktop space with direct access to the rear garden. To the first floor are three well-proportioned bedrooms, including two generous doubles, and a contemporary family bathroom. Further benefits include double glazing, gas central heating, off-street parking, and a well-maintained landscaped rear garden, making this an ideal home for families and first-time buyers alike.",
+            "location":"Manor Park Road, Lee SE12",
+            "picture":"",
+            "url":"",
+            "added":{
+                "month":"October",
+                "day":2,
+                "year":2022
+            }
+        },
+        {
+             "id":"prop4",
+            "type":"Flat",
+            "bedrooms":2,
+            "price":275000,
+            "tenure":"Leasehold",
+            "description":"Stylish and well-appointed two bedroom apartment situated on the second floor of a modern, purpose-built development, offering bright and contemporary living throughout. The property features a spacious open plan living and dining area seamlessly connected to a modern fitted kitchen complete with integrated appliances, providing an ideal space for both everyday living and entertaining. The generously sized double bedroom benefits from ample space for storage, while the sleek shower room is finished to a high standard with contemporary fittings. Further advantages include double glazing, a secure entry phone system, allocated parking, and well-maintained communal areas. Ideally located close to local amenities and excellent transport links, this apartment is perfectly suited to first-time buyers, professionals, or investors seeking a low-maintenance home with strong rental appeal.",
+            "location":"High Street, Bromley BR1",
+            "picture":"",
+            "url":"",
+            "added":{
+                "month":"August",
+                "day":21,
+                "year":2022
+            } 
+        },
+        {
+            "id":"prop5",
+            "type":"House",
+            "bedrooms":5,
+            "price":695000,
+            "tenure":"Freehold",
+            "description":"Spacious and well-maintained five bedroom detached family home ideally positioned within a quiet residential cul-de-sac, offering generous and versatile accommodation throughout. The ground floor comprises a welcoming entrance hallway, two well-proportioned reception rooms suitable for both formal entertaining and family living, and a large kitchen/breakfast room fitted with ample storage, worktop space, and room for dining, complemented by a separate utility area and a convenient downstairs cloakroom. To the first floor are four spacious bedrooms, including a master bedroom with built-in storage and a modern en-suite shower room, along with a contemporary family bathroom serving the remaining bedrooms. Externally, the property boasts a private and well-screened rear garden ideal for outdoor relaxation, a garage providing additional storage or parking, and a driveway offering ample off-street parking, making this an ideal long-term family home.",
+            "location":"Oakwood Close, Chislehurst BR7",
+            "picture":"",
+            "url":"",
+            "added":{
+            "month":"November",
+            "day":10,
+            "year":2022
+            }
+        },
+        {
+             "id":"prop6",
+            "type":"Flat",
+            "bedrooms":2,
+            "price":350000,
+            "tenure":"Freehold",
+            "description":"Modern two bedroom first floor apartment offering bright, spacious, and well-planned accommodation throughout, presented in excellent decorative order. The property features a generous open plan kitchen and living area fitted with contemporary units, ample worktop space, integrated appliances, and direct access to a private balcony, creating an ideal space for both everyday living and entertaining. Both bedrooms are well-proportioned doubles with room for wardrobes and additional furnishings, while the contemporary bathroom suite is finished to a high standard with modern fittings. Further benefits include secure allocated parking, lift access within the building, double glazing, and excellent natural light throughout. Conveniently located close to local amenities, shops, and mainline stations, this freehold apartment represents an ideal opportunity for first-time buyers, professionals, or investors seeking a low-maintenance property in a well-connected location.",
+            "location":"Station Road, Sidcup DA15",
+            "picture":"",
+            "url":"",
+            "added":{
+                "month":"July",
+                "day":5,
+                "year":2022
+            }
+        },
+        {
+             "id":"prop7",
+            "type":"House",
+            "bedrooms":4,
+            "price":415000,
+            "tenure":"Freehold",
+            "description":"Charming four bedroom terraced house presented in good decorative order throughout, offering well-balanced and flexible accommodation ideal for families. The ground floor comprises a cosy front lounge, a spacious modern kitchen/diner with ample storage and worktop space, and access to a low-maintenance rear garden providing a pleasant outdoor area for relaxation or entertaining. To the upper floors are four well-proportioned bedrooms, including two generous doubles and two additional bedrooms suitable for children, guests, or home office use, along with a family bathroom fitted with a modern suite. The property further benefits from double glazing, gas central heating, and a convenient residential location close to local amenities, schools, and transport links, making it an excellent long-term family home or investment opportunity.",
+            "location":"Brook Lane, Bexleyheath DA6",
+            "picture":"",
+            "url":"",
+            "added":{
+                "month":"September",
+                "day":30,
+                "year":2022
+            }
         }
 ]}
