@@ -1,25 +1,49 @@
-export default function PropertyCard({ p }) {
+import { Link } from "react-router-dom";
+
+export default function PropertyCard({ p, onAddFavourite }) {
   return (
-    <div style={{
-      border: "1px solid #ddd",
-      borderRadius: 12,
-      padding: 12,
-      display: "flex",
-      gap: 12
-    }}>
+    <div
+      draggable
+      onDragStart={(e) => {
+        e.dataTransfer.setData("text/plain", p.id);
+      }}
+      className="property-card"
+    >
       <img
         src={p.picture}
         alt={p.type}
-        style={{ width: 140, height: 100, objectFit: "cover", borderRadius: 10 }}
+        className="property-image"
       />
 
-      <div style={{ flex: 1 }}>
-        <div style={{ fontWeight: 700, fontSize: 18 }}>£{p.price.toLocaleString()}</div>
-        <div style={{ marginTop: 4 }}>
+      <div className="property-content">
+        <div className="property-price">
+          £{p.price.toLocaleString()}
+        </div>
+
+        <div className="property-meta">
           {p.bedrooms} bed • {p.type}
         </div>
-        <div style={{ marginTop: 6, color: "#444" }}>{p.description}</div>
-        <div style={{ marginTop: 8, fontSize: 12, color: "#666" }}>{p.location}</div>
+
+        <div className="property-location">
+          {p.location}
+        </div>
+
+        {/* ACTION BUTTONS */}
+        <div className="property-actions">
+          {/* View Property as BUTTON */}
+          <Link to={`/property/${p.id}`} className="btn btn-link">
+            View property
+          </Link>
+
+          {/* Add to favourites BUTTON */}
+          <button
+            type="button"
+            className="btn"
+            onClick={() => onAddFavourite(p.id)}
+          >
+            Add to favourites
+          </button>
+        </div>
       </div>
     </div>
   );
