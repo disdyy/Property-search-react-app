@@ -19,7 +19,6 @@ export default function App() {
   }
 
   function addFavourite(id) {
-    if (!id) return;
     if (!favourites.includes(id)) {
       setFavourites([...favourites, id]);
     }
@@ -35,7 +34,6 @@ export default function App() {
 
   return (
     <Routes>
-      {/* HOME PAGE */}
       <Route
         path="/"
         element={
@@ -44,7 +42,7 @@ export default function App() {
 
             <SearchForm onSearch={handleSearch} />
 
-            <div className="count">
+            <div style={{ marginBottom: 10, color: "#555" }}>
               Showing {filtered.length} result(s)
             </div>
 
@@ -62,14 +60,19 @@ export default function App() {
 
               {/* RIGHT: FAVOURITES (DROP ZONE) */}
               <div
-                className="favourites"
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={(e) => {
                   const droppedId = e.dataTransfer.getData("text/plain");
                   addFavourite(droppedId);
                 }}
+                style={{
+                  border: "2px dashed #aaa",
+                  borderRadius: 12,
+                  padding: 12,
+                  minHeight: 140,
+                }}
               >
-                <h2>Favourites</h2>
+                <h2 style={{ marginTop: 0 }}>Favourites (Drop Here)</h2>
 
                 {favourites.length === 0 && <p>No favourites yet.</p>}
 
@@ -78,19 +81,20 @@ export default function App() {
                   if (!property) return null;
 
                   return (
-                    <div key={id} className="fav-item">
-                      <div className="fav-price">
-                        £{property.price.toLocaleString()}
-                      </div>
-                      <div className="fav-meta">
+                    <div
+                      key={id}
+                      style={{
+                        border: "1px solid #ccc",
+                        padding: 10,
+                        marginBottom: 8,
+                        borderRadius: 10,
+                      }}
+                    >
+                      <strong>£{property.price.toLocaleString()}</strong>
+                      <div>
                         {property.bedrooms} bed • {property.type}
                       </div>
-
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={() => removeFavourite(id)}
-                      >
+                      <button type="button" onClick={() => removeFavourite(id)}>
                         Remove
                       </button>
                     </div>
@@ -98,11 +102,7 @@ export default function App() {
                 })}
 
                 {favourites.length > 0 && (
-                  <button
-                    type="button"
-                    className="btn"
-                    onClick={clearFavourites}
-                  >
+                  <button type="button" onClick={clearFavourites}>
                     Clear all favourites
                   </button>
                 )}
@@ -112,7 +112,6 @@ export default function App() {
         }
       />
 
-      {/* DETAILS PAGE */}
       <Route path="/property/:id" element={<PropertyDetails />} />
     </Routes>
   );
