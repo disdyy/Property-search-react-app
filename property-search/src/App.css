@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.layout {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.results {
+  display: grid;
+  gap: 12px;
+}
+
+/* Mobile / small screens */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr; /* stack sections */
+  }
+}
