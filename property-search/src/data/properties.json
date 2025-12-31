@@ -1,31 +1,47 @@
 {
-	"properties": [
+    "properties": [
         {
             "id":"prop1",
-			"type":"House",
+            "type":"House",
             "bedrooms":3,
-			"price":750000,
-			"tenure":"Freehold",
-			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
-			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
-			"picture":"images/prop1pic1small.jpg",
-			"url":"properties/prop1.html",
+            "price":750000,
+            "tenure":"Freehold",
+            "description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises two reception rooms, a fitted 18'9 x 10'1 kitchen/breakfast room and a conservatory, providing ample space for family living and entertaining. The property also benefits from a utility room and a ground floor cloakroom. To the first floor there are three well-proportioned bedrooms and a family bathroom with a separate WC. Additional features include double glazing, gas central heating and a well presented interior throughout. Externally, the property offers a well-maintained rear garden ideal for outdoor relaxation, along with off-street parking and potential for further extension subject to the usual planning consents.",
+            "location":"Petts Wood Road, Petts Wood, Orpington BR5",
+            "picture":"images/Prop1.jpeg",
+            "gallery":[
+                "/images/Prop1.jpeg",
+                "/images/Prop1.1.jpeg",
+                "/images/Prop1.2.jpeg",
+                "/images/Prop1.3.jpeg",
+                "/images/Prop1.4.jpeg",
+                "/images/Prop1.5.jpeg"
+            ],
+            "url":"properties/prop1.html",
             "added": {
                 "month":"October",
                 "day":12,
                 "year":2022
             }
         },
-		{
+        {
             "id":"prop2",
-			"type":"Flat",
+            "type":"Flat",
             "bedrooms":2,
-			"price":399995,
-			"tenure":"Freehold",
-			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
-			"location":"Crofton Road Orpington BR6",
-			"picture":"images/prop2pic1small.jpg",
-			"url":"properties/prop2.html",
+            "price":399995,
+            "tenure":"Freehold",
+            "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances such as a dishwasher and washing machine. This spacious open plan area further benefits from bi-folding doors opening onto a secluded private courtyard garden, ideal for entertaining or relaxing. Both bedrooms are generous doubles, and the family bathroom features a contemporary three-piece suite with a shower attachment over the bath. In addition, there is a separate wet room. Walnut doors are fitted throughout, and the property is fully wired for Sky TV and aerial points in the living room/kitchen and both bedrooms. This apartment, being only five years old, is still under a 10-year building guarantee and also benefits from modern construction standards, low maintenance living, and a long lease, making it an ideal purchase for first-time buyers, professionals, or investors alike.",
+            "location":"Crofton Road Orpington BR6",
+            "picture":"images/Prop2.jpeg",
+            "gallery":[
+                "/images/Prop2.jpeg",
+                "/images/Prop2.1.jpeg",
+                "/images/Prop2.2.jpeg",
+                "/images/Prop2.3.jpeg",
+                "/images/Prop2.4.jpeg",
+                "/images/Prop2.5.jpeg"
+            ],
+            "url":"properties/prop2.html",
             "added": {
                 "month":"September",
                 "day":14,
@@ -40,7 +56,15 @@
             "tenure":"Freehold",
             "description":"Well presented three bedroom semi-detached family home conveniently located close to local schools, shops, and excellent transport links. The ground floor comprises a welcoming entrance hallway, a bright and spacious living room with a feature bay window, a separate dining room ideal for entertaining, and a modern fitted kitchen offering ample storage and worktop space with direct access to the rear garden. To the first floor are three well-proportioned bedrooms, including two generous doubles, and a contemporary family bathroom. Further benefits include double glazing, gas central heating, off-street parking, and a well-maintained landscaped rear garden, making this an ideal home for families and first-time buyers alike.",
             "location":"Manor Park Road, Lee SE12",
-            "picture":"",
+            "picture":"images/Prop3.jpeg",
+            "gallery":[
+                "/images/Prop3.jpeg",
+                "/images/Prop3.1.jpeg",
+                "/images/Prop3.2.jpeg",
+                "/images/Prop3.3.jpeg",
+                "/images/Prop3.4.jpeg",
+                "/images/Prop3.5.jpeg"
+            ],
             "url":"",
             "added":{
                 "month":"October",
@@ -49,14 +73,22 @@
             }
         },
         {
-             "id":"prop4",
+            "id":"prop4",
             "type":"Flat",
-            "bedrooms":2,
+            "bedrooms":3,
             "price":275000,
             "tenure":"Leasehold",
-            "description":"Stylish and well-appointed two bedroom apartment situated on the second floor of a modern, purpose-built development, offering bright and contemporary living throughout. The property features a spacious open plan living and dining area seamlessly connected to a modern fitted kitchen complete with integrated appliances, providing an ideal space for both everyday living and entertaining. The generously sized double bedroom benefits from ample space for storage, while the sleek shower room is finished to a high standard with contemporary fittings. Further advantages include double glazing, a secure entry phone system, allocated parking, and well-maintained communal areas. Ideally located close to local amenities and excellent transport links, this apartment is perfectly suited to first-time buyers, professionals, or investors seeking a low-maintenance home with strong rental appeal.",
+            "description":"Stylish and well-appointed three bedroom apartment situated on the second floor of a modern, purpose-built development, offering bright and contemporary living throughout. The property features a spacious open plan living and dining area seamlessly connected to a modern fitted kitchen complete with integrated appliances, providing an ideal space for both everyday living and entertaining. The generously sized double bedroom benefits from ample space for storage, while the sleek shower room is finished to a high standard with contemporary fittings. Further advantages include double glazing, a secure entry phone system, allocated parking, and well-maintained communal areas. Ideally located close to local amenities and excellent transport links, this apartment is perfectly suited to first-time buyers, professionals, or investors seeking a low-maintenance home with strong rental appeal.",
             "location":"High Street, Bromley BR1",
-            "picture":"",
+            "picture":"images/Prop4.jpeg",
+            "gallery":[
+                "/images/Prop4.jpeg",
+                "/images/Prop4.1.jpeg",
+                "/images/Prop4.2.jpeg",
+                "/images/Prop4.3.jpeg",
+                "/images/Prop4.4.jpeg",
+                "/images/Prop4.5.jpeg"
+            ],
             "url":"",
             "added":{
                 "month":"August",
@@ -72,7 +104,15 @@
             "tenure":"Freehold",
             "description":"Spacious and well-maintained five bedroom detached family home ideally positioned within a quiet residential cul-de-sac, offering generous and versatile accommodation throughout. The ground floor comprises a welcoming entrance hallway, two well-proportioned reception rooms suitable for both formal entertaining and family living, and a large kitchen/breakfast room fitted with ample storage, worktop space, and room for dining, complemented by a separate utility area and a convenient downstairs cloakroom. To the first floor are four spacious bedrooms, including a master bedroom with built-in storage and a modern en-suite shower room, along with a contemporary family bathroom serving the remaining bedrooms. Externally, the property boasts a private and well-screened rear garden ideal for outdoor relaxation, a garage providing additional storage or parking, and a driveway offering ample off-street parking, making this an ideal long-term family home.",
             "location":"Oakwood Close, Chislehurst BR7",
-            "picture":"",
+            "picture":"images/Prop5.jpeg",
+            "gallery": [
+                "/images/Prop5.jpeg",
+                "/images/Prop5.1.jpeg",
+                "/images/Prop5.2.jpeg",
+                "/images/Prop5.3.jpeg",
+                "/images/Prop5.4.jpeg",
+                "/images/Prop5.5.jpeg"
+            ],
             "url":"",
             "added":{
             "month":"November",
@@ -81,14 +121,22 @@
             }
         },
         {
-             "id":"prop6",
+            "id":"prop6",
             "type":"Flat",
             "bedrooms":2,
             "price":350000,
             "tenure":"Freehold",
             "description":"Modern two bedroom first floor apartment offering bright, spacious, and well-planned accommodation throughout, presented in excellent decorative order. The property features a generous open plan kitchen and living area fitted with contemporary units, ample worktop space, integrated appliances, and direct access to a private balcony, creating an ideal space for both everyday living and entertaining. Both bedrooms are well-proportioned doubles with room for wardrobes and additional furnishings, while the contemporary bathroom suite is finished to a high standard with modern fittings. Further benefits include secure allocated parking, lift access within the building, double glazing, and excellent natural light throughout. Conveniently located close to local amenities, shops, and mainline stations, this freehold apartment represents an ideal opportunity for first-time buyers, professionals, or investors seeking a low-maintenance property in a well-connected location.",
             "location":"Station Road, Sidcup DA15",
-            "picture":"",
+            "picture":"images/Prop6.jpeg",
+            "gallery":[
+                "/images/Prop6.jpeg",
+                "/images/Prop6.1.jpeg",
+                "/images/Prop6.2.jpeg",
+                "/images/Prop6.3.jpeg",
+                "/images/Prop6.4.jpeg",
+                "/images/Prop6.5.jpeg"
+            ],
             "url":"",
             "added":{
                 "month":"July",
@@ -97,19 +145,28 @@
             }
         },
         {
-             "id":"prop7",
+            "id":"prop7",
             "type":"House",
             "bedrooms":4,
             "price":415000,
             "tenure":"Freehold",
             "description":"Charming four bedroom terraced house presented in good decorative order throughout, offering well-balanced and flexible accommodation ideal for families. The ground floor comprises a cosy front lounge, a spacious modern kitchen/diner with ample storage and worktop space, and access to a low-maintenance rear garden providing a pleasant outdoor area for relaxation or entertaining. To the upper floors are four well-proportioned bedrooms, including two generous doubles and two additional bedrooms suitable for children, guests, or home office use, along with a family bathroom fitted with a modern suite. The property further benefits from double glazing, gas central heating, and a convenient residential location close to local amenities, schools, and transport links, making it an excellent long-term family home or investment opportunity.",
             "location":"Brook Lane, Bexleyheath DA6",
-            "picture":"",
+            "picture":"images/Prop7.jpeg",
+            "gallery":[
+                "/images/Prop7.jpeg",
+                "/images/Prop7.1.jpeg",
+                "/images/Prop7.2.jpeg",
+                "/images/Prop7.3.jpeg",
+                "/images/Prop7.4.jpeg",
+                "/images/Prop7.5.jpeg"
+            ],
             "url":"",
             "added":{
                 "month":"September",
                 "day":30,
                 "year":2022
             }
-        }
+    }
 ]}
+

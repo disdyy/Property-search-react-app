@@ -18,7 +18,7 @@ export default function PropertyDetails() {
       ? [property.picture]
       : [];
 
-  //  Main image for gallery tab
+  // Main image for gallery tab
   const [mainImage, setMainImage] = useState(gallery[0] || "");
 
   if (!property) {
@@ -137,7 +137,7 @@ export default function PropertyDetails() {
           </div>
         )}
 
-        {/* Map Tab */}
+        {/*  Map Tab */}
         {tab === "map" && (
           <iframe
             title="map"
