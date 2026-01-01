@@ -1,73 +1,43 @@
 import { Link } from "react-router-dom";
 
 export default function PropertyCard({ p, onAddFavourite }) {
+  const shortDesc =
+    p.description && p.description.length > 160
+      ? p.description.slice(0, 160) + "..."
+      : p.description;
+
   return (
     <div
+      className="property-card"
       draggable
       onDragStart={(e) => {
         e.dataTransfer.setData("text/plain", p.id);
       }}
-      style={{
-        border: "1px solid #ddd",
-        borderRadius: 12,
-        padding: 12,
-        display: "flex",
-        gap: 12,
-        cursor: "grab",
-      }}
     >
-      <img
-        src={p.picture}
-        alt={p.type}
-        style={{
-          width: 140,
-          height: 100,
-          objectFit: "cover",
-          borderRadius: 10,
-        }}
-      />
+      <div className="property-image">
+        <img src={p.picture} alt={p.type} />
+      </div>
 
-      <div style={{ flex: 1 }}>
-        <div style={{ fontWeight: 700, fontSize: 18 }}>
-          £{p.price.toLocaleString()}
+      <div className="property-info">
+        <div>
+          <div className="property-price">£{p.price.toLocaleString()}</div>
+          <div className="property-meta">
+            {p.bedrooms} bed • {p.type}
+          </div>
+
+          <div className="property-desc">{shortDesc}</div>
+          <div className="property-location">{p.location}</div>
         </div>
 
-        <div style={{ marginTop: 4 }}>
-          {p.bedrooms} bed • {p.type}
-        </div>
-
-        <div style={{ marginTop: 6, color: "#444" }}>{p.description}</div>
-
-        <div style={{ marginTop: 8, fontSize: 12, color: "#666" }}>
-          {p.location}
-        </div>
-
-        <div style={{ marginTop: 10, display: "flex", gap: 12 }}>
-          <Link
-            to={`/property/${p.id}`}
-            style={{
-              color: "#0066cc",
-              textDecoration: "none",
-              fontWeight: 500,
-            }}
-          >
+        <div className="property-actions">
+          <Link className="btn-link" to={`/property/${p.id}`}>
             View property
           </Link>
 
-          <button
-            type="button"
-            onClick={() => onAddFavourite(p.id)}
-            style={{
-              padding: "4px 10px",
-              borderRadius: 8,
-              border: "1px solid #888",
-              cursor: "pointer",
-            }}
-          >
+          <button className="btn" type="button" onClick={() => onAddFavourite(p.id)}>
             Add to favourites
           </button>
         </div>
       </div>
     </div>
   );
-}
