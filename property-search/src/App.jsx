@@ -73,35 +73,39 @@ export default function App() {
 
                 {favourites.length === 0 && <p>No favourites yet.</p>}
 
-                {favourites.map((id) => {
-                  const property = properties.find((p) => p.id === id);
-                  if (!property) return null;
+                {/* FAVOURITES GRID WRAPPER */}
+                <div className="fav-grid">
+                  {favourites.map((id) => {
+                    const property = properties.find((p) => p.id === id);
+                    if (!property) return null;
 
-                  return (
-                    <div key={id} className="fav-item">
-                      <div className="fav-price">
-                        £{property.price.toLocaleString()}
-                      </div>
-                      <div className="fav-meta">
-                        {property.bedrooms} bed • {property.type}
-                      </div>
+                    return (
+                      <div key={id} className="fav-item">
+                        <div className="fav-price">
+                          £{property.price.toLocaleString()}
+                        </div>
+                        <div className="fav-meta">
+                          {property.bedrooms} bed • {property.type}
+                        </div>
 
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={() => removeFavourite(id)}
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  );
-                })}
+                        <button
+                          type="button"
+                          className="btn"
+                          onClick={() => removeFavourite(id)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
 
                 {favourites.length > 0 && (
                   <button
                     type="button"
                     className="btn"
                     onClick={clearFavourites}
+                    style={{ marginTop: 12 }}
                   >
                     Clear all favourites
                   </button>

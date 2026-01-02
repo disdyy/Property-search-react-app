@@ -3,39 +3,42 @@ import { Link } from "react-router-dom";
 export default function PropertyCard({ p, onAddFavourite }) {
   return (
     <div
-      className="property-card"
       draggable
       onDragStart={(e) => {
         e.dataTransfer.setData("text/plain", p.id);
       }}
+      className="property-card"
     >
-      <div className="property-image">
-        <img src={p.picture} alt={p.type} />
-      </div>
+      <img
+        src={p.picture}
+        alt={p.type}
+        className="property-image"
+      />
 
-      <div className="property-info">
-        <div>
-          <div className="property-price">
-            £{p.price.toLocaleString()}
-          </div>
-
-          <div className="property-meta">
-            {p.bedrooms} bed • {p.type}
-          </div>
-
-          <div className="property-location">
-            {p.location}
-          </div>
+      <div className="property-content">
+        <div className="property-price">
+          £{p.price.toLocaleString()}
         </div>
 
+        <div className="property-meta">
+          {p.bedrooms} bed • {p.type}
+        </div>
+
+        <div className="property-location">
+          {p.location}
+        </div>
+
+        {/* ACTION BUTTONS */}
         <div className="property-actions">
-          <Link className="btn-link" to={`/property/${p.id}`}>
+          {/* View Property as BUTTON */}
+          <Link to={`/property/${p.id}`} className="btn btn-link">
             View property
           </Link>
 
+          {/* Add to favourites BUTTON */}
           <button
-            className="btn"
             type="button"
+            className="btn"
             onClick={() => onAddFavourite(p.id)}
           >
             Add to favourites
