@@ -45,11 +45,12 @@ export default function App() {
           path="/"
           element={
             <div className="page" id="home">
-              {/* Removed <h1>Property Finder</h1> because it's in Navbar now */}
-
+              {/* Search */}
               <SearchForm onSearch={handleSearch} />
 
-              <div className="count">Showing {filtered.length} result(s)</div>
+              <div className="count">
+                Showing {filtered.length} result(s)
+              </div>
 
               <div className="layout">
                 {/* LEFT: SEARCH RESULTS */}
@@ -63,7 +64,7 @@ export default function App() {
                   ))}
                 </div>
 
-                {/* RIGHT: FAVOURITES (DROP ZONE) */}
+                {/* RIGHT: FAVOURITES */}
                 <div
                   className="favourites"
                   onDragOver={(e) => e.preventDefault()}
@@ -76,7 +77,6 @@ export default function App() {
 
                   {favourites.length === 0 && <p>No favourites yet.</p>}
 
-                  {/* FAVOURITES GRID WRAPPER */}
                   <div className="fav-grid">
                     {favourites.map((id) => {
                       const property = properties.find((p) => p.id === id);
@@ -117,22 +117,30 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Optional sections to match navbar links */}
+              {/* ABOUT SECTION */}
               <div id="about" className="section-box">
-              <h2>Who Are We?</h2>
-              <p>
-               We are a dedicated real estate platform committed to helping people find the right place to call home.
-              Our focus is on connecting buyers with a wide range of quality properties, including houses, flats, and 
-              apartments, that suit different lifestyles and budgets. We believe t hat property buying should be simple, 
-              transparent, and stress-free, so we provide clear property information, honest pricing, and user-friendly 
-              browsing experiences. With a strong emphasis on trust, professionalism, and customer satisfaction, we aim to 
-              support our clients at every step of their property journey and help them make confident, well-informed decisions.
-              </p>
+                <h2>Who Are We?</h2>
+                <p>
+                  Property Finder is a modern property listing platform designed to
+                  simplify the process of buying and renting homes. We help users
+                  discover properties that match their needs through clear listings,
+                  powerful search tools, and an easy way to save favourites.
+                </p>
+                <p>
+                  Our focus is on providing a clean, accessible, and user-friendly
+                  experience using modern web technologies, making property searches
+                  more efficient and stress-free.
+                </p>
               </div>
 
+              {/* CONTACT SECTION */}
               <div id="contact" className="section-box">
                 <h2>Contact Us</h2>
-                <p>Email: example@email.com</p>
+                <p className="section-subtext">
+                  Fill in the form below and we’ll get back to you as soon as possible.
+                </p>
+
+                <ContactForm />
               </div>
             </div>
           }
@@ -142,5 +150,122 @@ export default function App() {
         <Route path="/property/:id" element={<PropertyDetails />} />
       </Routes>
     </>
+  );
+}
+
+/* ---------------- CONTACT FORM COMPONENT ---------------- */
+
+function ContactForm() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    reason: "",
+    message: "",
+    agree: false,
+  });
+
+  const [status, setStatus] = useState("");
+
+  function updateField(e) {
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!form.name || !form.email || !form.phone || !form.reason || !form.message) {
+      setStatus("Please fill in all fields.");
+      return;
+    }
+
+    if (!form.agree) {
+      setStatus("Please agree with the details and requirements.");
+      return;
+    }
+
+    setStatus("Message sent successfully! We will contact you soon.");
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      reason: "",
+      message: "",
+      agree: false,
+    });
+  }
+
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <input
+        className="contact-input"
+        type="text"
+        name="name"
+        placeholder="Enter Your Name"
+        value={form.name}
+        onChange={updateField}
+      />
+
+      <input
+        className="contact-input"
+        type="email"
+        name="email"
+        placeholder="Enter Your Email"
+        value={form.email}
+        onChange={updateField}
+      />
+
+      <input
+        className="contact-input"
+        type="tel"
+        name="phone"
+        placeholder="Enter Your Phone Number"
+        value={form.phone}
+        onChange={updateField}
+      />
+
+      <select
+        className="contact-input"
+        name="reason"
+        value={form.reason}
+        onChange={updateField}
+      >
+        <option value="">What can I help you with?</option>
+        <option value="Buying">Buying a property</option>
+        <option value="Renting">Renting a property</option>
+        <option value="Viewing">Booking a viewing</option>
+        <option value="Mortgage">Mortgage advice</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea
+        className="contact-textarea"
+        name="message"
+        placeholder="Message"
+        value={form.message}
+        onChange={updateField}
+      />
+
+      <label className="contact-check">
+        <input
+          type="checkbox"
+          name="agree"
+          checked={form.agree}
+          onChange={updateField}
+        />
+        <span>I agree with above details and requirements.</span>
+      </label>
+
+      {status && <div className="contact-status">{status}</div>}
+
+      <button className="contact-btn" type="submit">
+        Send
+      </button>
+    </form>
   );
 }
