@@ -3,6 +3,17 @@ body {
   background: #f5f5f5;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#home,
+#results,
+#about,
+#contact {
+  scroll-margin-top: 90px; /* prevents navbar covering section titles */
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -45,6 +56,7 @@ body {
 .read-the-docs {
   color: #888;
 }
+
 .page {
   max-width: 900px;
   margin: 0 auto;
@@ -68,6 +80,7 @@ body {
     grid-template-columns: 1fr; /* stack sections */
   }
 }
+
 /* Property Cards */
 .property-card {
   display: grid;
@@ -80,7 +93,8 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-.property-image img {
+/* FIXED: your JSX uses <img className="property-image" /> */
+.property-image {
   width: 100%;
   height: 170px;
   object-fit: cover;
@@ -123,34 +137,17 @@ body {
   align-items: center;
 }
 
-.btn {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid #999;
-  background: #f6f6f6;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #eee;
-}
-
-.btn-link {
-  text-decoration: none;
-  color: #0b57d0;
-  font-weight: 600;
-}
-
 /* Mobile responsive */
 @media (max-width: 700px) {
   .property-card {
     grid-template-columns: 1fr;
   }
 
-  .property-image img {
+  .property-image {
     height: 220px;
   }
 }
+
 /* --- Clean Search Card --- */
 .search-card {
   max-width: 1100px;          /* keeps form centered and not too wide */
@@ -172,7 +169,7 @@ body {
 .search-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)); /* prevents overflow */
-  gap: 18px;                                        /*  more space between boxes */
+  gap: 18px;                                        /* more space between boxes */
   align-items: start;
 }
 
@@ -191,14 +188,14 @@ body {
 .search-grid input,
 .search-grid select {
   width: 100%;
-  height: 44px;             /*consistent height */
+  height: 44px;             /* consistent height */
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.18);
   background: #fbfbfb;
   font-size: 14px;
   outline: none;
-  box-sizing: border-box;   /*stops overflow */
+  box-sizing: border-box;   /* stops overflow */
 }
 
 /* Focus effect */
@@ -256,5 +253,247 @@ body {
 
   .search-actions button {
     width: 100%;
+  }
+}
+
+/* ---------- Unified Button Styles ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 2px solid rgba(0,0,0,0.25);
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+  gap: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.btn:hover {
+  filter: brightness(0.96);
+}
+
+.btn-outline {
+  background: #ffffff;
+}
+
+/* FIXED: Link should look like a button (not blue underline) */
+.btn-link {
+  text-decoration: none;
+  color: #111;
+}
+
+/* Make View property + Add to favourites bold Times New Roman */
+.property-actions .btn {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
+}
+
+/* ---------- Property Card Buttons Layout ---------- */
+.property-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Favourites Panel ---------- */
+.favourites {
+  border: 2px dashed #aaa;
+  border-radius: 14px;
+  padding: 16px;
+  min-height: 180px;
+  background: #fff;
+}
+
+/* Grid inside favourites */
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Each favourite box */
+.fav-item {
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 14px;
+  padding: 12px;
+  background: #fafafa;
+}
+
+.fav-price {
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.fav-meta {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .fav-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  font-size: 22px;
+  text-decoration: none;
+  color: #111;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #222;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.navlink:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Optional “active” look for Home using NavLink */
+.navlink.active {
+  background: rgba(0,0,0,0.08);
+}
+
+/* Small info sections (About, Contact) */
+.section-box {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.10);
+  text-align: left;
+}
+
+/* Responsive navbar */
+@media (max-width: 700px) {
+  .navbar-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* ============================= */
+/* NAVBAR (Rightmove-like style) */
+/* ============================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 72px;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Brand (Property Finder on left) */
+.navbar-brand {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.3px;
+
+  color: #111;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Links in the middle */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;                /* gap between links like the screenshot */
+  flex: 1;                  /* makes links sit centered */
+}
+
+.navbar-link {
+  text-decoration: none;    /* removes "link look" */
+  color: #111;
+  font-weight: 700;
+  font-size: 18px;
+
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.navbar-link:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+/* Right button */
+.navbar-cta {
+  text-decoration: none;
+  color: #111;
+  font-weight: 800;
+  font-size: 18px;
+
+  padding: 10px 16px;
+  border: 2px solid rgba(0,0,0,0.25);
+  border-radius: 14px;
+  background: #fff;
+
+  transition: background 0.15s ease;
+}
+
+.navbar-cta:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Responsive: stack links on small screens */
+@media (max-width: 900px) {
+  .navbar-links {
+    display: none; /* hides middle links on small screens (cleaner) */
   }
 }
