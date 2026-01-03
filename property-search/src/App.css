@@ -35,12 +35,8 @@ html {
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -79,6 +75,23 @@ html {
   .layout {
     grid-template-columns: 1fr; /* stack sections */
   }
+}
+
+/* ---------- Results Count ---------- */
+.count {
+  margin: 20px auto 10px auto;
+  padding: 10px 18px;
+  width: fit-content;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.count span {
+  font-weight: 800;
 }
 
 /* Property Cards */
@@ -196,6 +209,7 @@ html {
   font-size: 14px;
   outline: none;
   box-sizing: border-box;   /* stops overflow */
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Focus effect */
@@ -222,6 +236,7 @@ html {
   background: #f3f3f3;
   font-weight: 800;
   cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .search-actions button[type="submit"] {
@@ -276,20 +291,11 @@ html {
   filter: brightness(0.96);
 }
 
-.btn-outline {
-  background: #ffffff;
-}
-
 /* ✅ FIXED: Link should look like a button (not blue underline) */
+/*FIXED: Link should look like a button (not blue underline) */
 .btn-link {
   text-decoration: none;
   color: #111;
-}
-
-/* Make View property + Add to favourites bold Times New Roman */
-.property-actions .btn {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 800;
 }
 
 /* ---------- Property Card Buttons Layout ---------- */
@@ -342,77 +348,26 @@ html {
     grid-template-columns: 1fr;
   }
 }
-/* ---------- NAVBAR ---------- */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+/* Favourites page grid */
+.fav-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
 }
 
-.navbar-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 14px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-brand {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 900;
-  font-size: 22px;
-  text-decoration: none;
-  color: #111;
-}
-
-.navbar-links {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-}
-
-.navlink {
-  text-decoration: none;
-  color: #222;
-  font-weight: 700;
-  padding: 8px 10px;
-  border-radius: 10px;
-}
-
-.navlink:hover {
-  background: rgba(0,0,0,0.05);
-}
-
-/* Optional “active” look for Home using NavLink */
-.navlink.active {
-  background: rgba(0,0,0,0.08);
-}
-
-/* Small info sections (About, Contact) */
-.section-box {
-  margin-top: 24px;
-  padding: 16px;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.10);
-  text-align: left;
-}
-
-/* Responsive navbar */
-@media (max-width: 700px) {
-  .navbar-inner {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
+@media (max-width: 900px) {
+  .fav-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+@media (max-width: 600px) {
+  .fav-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ============================= */
 /* NAVBAR (Rightmove-like style) */
 /* ============================= */
@@ -575,7 +530,7 @@ html {
   height: 48px;
   border-radius: 14px;
   border: 2px solid rgba(0,0,0,0.25);
-  background: #f3f3f3; /* same as Add to favourites */
+  background: #ffffff;
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
   font-weight: 800;
@@ -585,3 +540,10 @@ html {
 .contact-btn:hover {
   filter: brightness(0.96);
 }
+.property-date {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
