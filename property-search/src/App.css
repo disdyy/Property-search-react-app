@@ -291,7 +291,6 @@ html {
   filter: brightness(0.96);
 }
 
-/* ✅ FIXED: Link should look like a button (not blue underline) */
 /*FIXED: Link should look like a button (not blue underline) */
 .btn-link {
   text-decoration: none;
