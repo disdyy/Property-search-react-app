@@ -36,7 +36,6 @@ function ContactForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Simple validation
     if (
       !form.name ||
       !form.email ||
@@ -53,10 +52,8 @@ function ContactForm() {
       return;
     }
 
-    //send
     setStatus("Message sent successfully! We will contact you soon.");
 
-    // Clear form after submit
     setForm({
       name: "",
       email: "",
@@ -106,7 +103,6 @@ function ContactForm() {
         <option value="Buying">Buying a property</option>
         <option value="Renting">Renting a property</option>
         <option value="Viewing">Booking a viewing</option>
-        <option value="Mortgage">Mortgage advice</option>
         <option value="Other">Other</option>
       </select>
 
@@ -176,10 +172,27 @@ export default function App() {
 
               <div className="count">Showing {filtered.length} result(s)</div>
 
-              {/* RESULTS ONLY (no favourites column now) */}
+              {/* DRAG & DROP FAVOURITES BAR */}
+              <div
+                className="fav-dropbar"
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  const droppedId = e.dataTransfer.getData("text/plain");
+                  addFavourite(droppedId);
+                }}
+              >
+                Drag a property card here to add it to favourites
+              </div>
+
+              {/* RESULTS */}
               <div className="results" id="results">
                 {filtered.map((p) => (
-                  <PropertyCard key={p.id} p={p} onAddFavourite={addFavourite} />
+                  <PropertyCard
+                    key={p.id}
+                    p={p}
+                    onAddFavourite={addFavourite}
+                  />
                 ))}
               </div>
 
@@ -187,20 +200,12 @@ export default function App() {
               <div id="about" className="section-box">
                 <h2>Who Are We?</h2>
                 <p>
-                  Property Finder is a modern property listing platform created to
-                  simplify the process of buying and renting properties. Our goal is to
-                  help users quickly find homes that match their preferences by
-                  providing clear property information, powerful search and filtering
-                  options, and an easy way to save favourite listings for later
-                  comparison.
-                </p>
-
-                <p>
-                  We focus on delivering a clean and accessible user experience using
-                  modern web technologies. By combining structured property data with
-                  an intuitive interface, Property Finder enables users to explore
-                  available properties confidently and efficiently, making the property
-                  search process more organised and less time-consuming.
+                  We are a dedicated real estate platform committed to helping people find the right place 
+                  to call home. Our focus is on connecting buyers with a wide range of quality properties, 
+                  including houses, flats, and apartments, that suit different lifestyles and budgets. We believe t
+                  hat property buying should be simple, transparent, and stress-free, so we provide clear property information, honest pricing, 
+                  and user-friendly browsing experiences. With a strong emphasis on trust, professionalism, and customer satisfaction, 
+                  we aim to support our clients at every step of their property journey and help them make confident, well-informed decisions.
                 </p>
               </div>
 
@@ -210,8 +215,6 @@ export default function App() {
                 <p className="section-subtext">
                   Fill in the form below and we’ll get back to you as soon as possible.
                 </p>
-
-                {/*Contact form added back */}
                 <ContactForm />
               </div>
             </div>
