@@ -67,13 +67,19 @@ html {
 
 .results {
   display: grid;
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 24px;
+}
+/* Mobile / small screens */
+@media (max-width: 1000px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Mobile / small screens */
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr; /* stack sections */
+@media (max-width: 600px) {
+  .results {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -96,23 +102,24 @@ html {
 
 /* Property Cards */
 .property-card {
-  display: grid;
-  grid-template-columns: 230px 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;      /* image top, content below */
   border: 1px solid #e2e2e2;
   border-radius: 14px;
   padding: 14px;
   background: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  height: 100%;                /* makes cards uniform */
 }
 
 /* FIXED: your JSX uses <img className="property-image" /> */
 .property-image {
   width: 100%;
-  height: 170px;
+  aspect-ratio: 1 / 1;         /*  forces square shape */
   object-fit: cover;
   border-radius: 12px;
   display: block;
+  margin-bottom: 12px;
 }
 
 .property-info {
@@ -148,6 +155,8 @@ html {
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center; /* centers the buttons */
+  flex-wrap: wrap;
 }
 
 /* Mobile responsive */
@@ -367,16 +376,16 @@ html {
   }
 }
 
-/* ============================= */
-/* NAVBAR (Rightmove-like style) */
-/* ============================= */
-
+/* ---------- NAVBAR ---------- */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 50;
   background: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,0.10);
+
+  /*Make everything inside navbar Times New Roman */
+  font-family: "Times New Roman", Times, serif;
 }
 
 .navbar-inner {
@@ -388,6 +397,18 @@ html {
   display: flex;
   align-items: center;
   gap: 22px;
+}
+/* Make navbar full width even though #root is centered */
+.navbar {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Keep navbar content nicely centered inside */
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Brand (Property Finder on left) */
@@ -407,12 +428,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 44px;                /* gap between links like the screenshot */
-  flex: 1;                  /* makes links sit centered */
+  gap: 44px;
+  flex: 1;
 }
 
+/* One clean navbar-link rule (merged your duplicates) */
 .navbar-link {
-  text-decoration: none;    /* removes "link look" */
+  font-family: "Times New Roman", Times, serif; /*ensure Times New Roman */
+  text-decoration: none;
   color: #111;
   font-weight: 700;
   font-size: 18px;
@@ -420,6 +443,11 @@ html {
   padding: 8px 10px;
   border-radius: 10px;
   transition: background 0.15s ease;
+
+  /* allows using <button> OR <a> */
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .navbar-link:hover {
@@ -428,6 +456,7 @@ html {
 
 /* Right button */
 .navbar-cta {
+  font-family: "Times New Roman", Times, serif; /* ensure Times New Roman */
   text-decoration: none;
   color: #111;
   font-weight: 800;
@@ -437,6 +466,7 @@ html {
   border: 2px solid rgba(0,0,0,0.25);
   border-radius: 14px;
   background: #fff;
+  cursor: pointer;
 
   transition: background 0.15s ease;
 }
@@ -445,10 +475,10 @@ html {
   background: rgba(0,0,0,0.05);
 }
 
-/* Responsive: stack links on small screens */
+/* Responsive */
 @media (max-width: 900px) {
   .navbar-links {
-    display: none; /* hides middle links on small screens (cleaner) */
+    display: none;
   }
 }
 
@@ -546,3 +576,81 @@ html {
   font-style: italic;
 }
 
+/* ---------- Property Details Page ---------- */
+
+.details-back {
+  display: inline-flex;
+  margin-bottom: 12px;
+}
+
+.details-hero {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.details-noimage {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #777;
+  background: #fff;
+}
+
+.details-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+}
+
+.details-tab {
+  height: 40px;
+  padding: 0 14px;
+}
+
+.details-tab-active {
+  background: #f3f3f3;
+}
+
+.details-panel {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: left;
+}
+
+.details-gallery-main {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+.details-thumbs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.details-thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.details-thumb-active {
+  border: 2px solid #000;
+}
