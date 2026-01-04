@@ -8,6 +8,7 @@ import FavouritesPage from "./Components/FavouritesPage";
 import { applyFilters } from "./utils/applyFilters";
 import "./App.css";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 const properties = data.properties;
 
@@ -159,7 +160,7 @@ export default function App() {
 
   return (
     <>
-      {/* NAVBAR (Shows on all pages) */}
+      {/* NAVBAR */}
       <Navbar />
 
       <Routes>
@@ -196,7 +197,7 @@ export default function App() {
                 ))}
               </div>
 
-              {/* About section */}
+              {/* ABOUT */}
               <div id="about" className="section-box">
                 <h2>Who Are We?</h2>
                 <p>
@@ -209,11 +210,12 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Contact section */}
+              {/* CONTACT */}
               <div id="contact" className="section-box">
                 <h2>Contact Us</h2>
                 <p className="section-subtext">
-                  Fill in the form below and we’ll get back to you as soon as possible.
+                  Fill in the form below and we’ll get back to you as soon as
+                  possible.
                 </p>
                 <ContactForm />
               </div>
@@ -237,6 +239,9 @@ export default function App() {
         {/* DETAILS PAGE */}
         <Route path="/property/:id" element={<PropertyDetails />} />
       </Routes>
+
+      {/* FOOTER */}
+      <Footer />
     </>
   );
 }

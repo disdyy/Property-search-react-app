@@ -20,6 +20,31 @@ html {
   padding: 2rem;
   text-align: center;
 }
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: #fff;
+}
+
+/* ✅ FIX: stretch page height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
 .logo {
   height: 6em;
@@ -67,9 +92,11 @@ html {
 
 .results {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px; /* left ↔ right gap */
+  row-gap: 40px;    /* top ↕ bottom gap */
 }
+
 /* Mobile / small screens */
 @media (max-width: 1000px) {
   .results {
@@ -393,7 +420,7 @@ html {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid rgba(0,0,0,0.10);
 
   /*Make everything inside navbar Times New Roman */
@@ -456,7 +483,7 @@ html {
   border-radius: 10px;
   transition: background 0.15s ease;
 
-  /*allows using <button> OR <a> */
+  /* allows using <button> OR <a> */
   background: none;
   border: none;
   cursor: pointer;
@@ -468,7 +495,7 @@ html {
 
 /* Right button */
 .navbar-cta {
-  font-family: "Times New Roman", Times, serif; /*ensure Times New Roman */
+  font-family: "Times New Roman", Times, serif; /* ensure Times New Roman */
   text-decoration: none;
   color: #111;
   font-weight: 800;
@@ -498,6 +525,7 @@ html {
   margin-top: 60px;
   padding: 28px;
   background: #ffffff;
+  border: 1px solid #e2e2e2;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   text-align: center;
@@ -667,4 +695,109 @@ html {
 
 .details-thumb-active {
   border: 2px solid #000;
+}
+/* ---------- FOOTER ---------- */
+
+.footer {
+  background: #093FB4;
+  color: #ffffff;
+  margin-top: 80px;
+  padding-top: 60px;
+}
+
+/* Full width even if root is centered */
+.footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: auto;
+}
+
+/* Inner content */
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 40px 24px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.footer-subtitle {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.footer-text {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.footer-links li:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.footer-credit {
+  font-style: italic;
+}
+.footer,
+.footer * {
+  font-weight: 800;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
 }
