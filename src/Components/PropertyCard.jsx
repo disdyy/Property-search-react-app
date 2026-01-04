@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 
 export default function PropertyCard({ p, onAddFavourite }) {
+  const formattedDate = new Date(p.dateAdded).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
   return (
     <div
       draggable
       onDragStart={(e) => {
-        e.dataTransfer.setData("text/plain", p.id);
+          e.dataTransfer.setData("text/plain", String(p.id));
       }}
       className="property-card"
     >
@@ -26,6 +31,9 @@ export default function PropertyCard({ p, onAddFavourite }) {
 
         <div className="property-location">
           {p.location}
+        </div>
+        <div className="property-date">
+        Added on {formattedDate}
         </div>
 
         {/* ACTION BUTTONS */}
