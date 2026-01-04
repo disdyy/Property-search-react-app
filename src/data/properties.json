@@ -11,13 +11,13 @@
             "dateAdded": "2025-10-12",
 			"picture":"images/Prop1.jpeg",
             "gallery":[
-                "/Property-search-react-app//images/Prop1.jpeg",
-                "/Property-search-react-app//images/Prop1.1.jpeg",
-                "/Property-search-react-app//images/Prop1.2.jpeg",
-                "/Property-search-react-app//images/Prop1.3.jpeg",
-                "/Property-search-react-app//images/Prop1.4.jpeg",
-                "/Property-search-react-app//images/Prop1.5.jpeg",
-                "/Property-search-react-app//images/Prop1.6.png"
+                "/Property-search-react-app/images/Prop1.jpeg",
+                "/Property-search-react-app/images/Prop1.1.jpeg",
+                "/Property-search-react-app/images/Prop1.2.jpeg",
+                "/Property-search-react-app/images/Prop1.3.jpeg",
+                "/Property-search-react-app/images/Prop1.4.jpeg",
+                "/Property-search-react-app/images/Prop1.5.jpeg",
+                "/Property-search-react-app/images/Prop1.6.png"
             ],
 			"url":"properties/prop1.html",
             "added": {
